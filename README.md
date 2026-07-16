@@ -115,6 +115,7 @@ LoadFlow/
 ## Hackathon Notes
 
 - Built with AI coding assistance; see [`AI_ASSISTED_DEVELOPMENT.md`](AI_ASSISTED_DEVELOPMENT.md)
+- Recording plan: see [`HACKATHON_DEMO_SCRIPT.md`](HACKATHON_DEMO_SCRIPT.md)
 - SQLite chosen for zero-config local demo
 - POD files stored in `backend/LoadFlow.Api/uploads/pods/`
 - Stretch features included: POD upload/view, compliance expiry alerts, load audit trail, permission-denied log API
@@ -122,6 +123,28 @@ LoadFlow/
 ## Project Status
 
 Both production builds and API/RBAC smoke checks pass. See [`PROJECT_AUDIT.md`](PROJECT_AUDIT.md) for the requirement-by-requirement assessment and prioritized remaining production work.
+
+## Submission Notes
+
+### Assumptions
+
+- Broker and Carrier accounts are organizations; Shippers are individual accounts without sub-roles.
+- The first organization admin self-registers, while later staff accounts are created by that admin.
+- SQLite and local POD storage are appropriate for a zero-configuration hackathon demonstration.
+- Demo carrier compliance data represents the external authority and insurance information a production system would obtain from trusted sources.
+
+### Incomplete
+
+- Automated integration coverage is not yet comprehensive.
+- Staff role reassignment/deactivation and literal delete operations need complete API and UI workflows.
+- The app uses `EnsureCreated` rather than versioned EF Core migrations and retains a development JWT key in local configuration.
+- The app has local run instructions but is not deployed to a production host.
+
+### With More Time
+
+- Add exhaustive authorization, cross-organization, state-machine, and compliance integration tests.
+- Add staff invitations, account recovery, token revocation, EF Core migrations, production secret management, pagination, and cloud-backed POD storage.
+- Deploy behind HTTPS with persistent storage, health checks, monitoring, backups, and production CORS configuration.
 
 ## Testing the Compliance Flow
 
