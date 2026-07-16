@@ -1,0 +1,22 @@
+# .NET
+backend/**/bin/
+backend/**/obj/
+backend/**/*.user
+backend/**/loadflow.db
+backend/**/loadflow.db-shm
+backend/**/loadflow.db-wal
+backend/**/uploads/
+
+# Node
+frontend/**/node_modules/
+frontend/**/dist/
+frontend/**/.env.local
+*.tsbuildinfo
+
+# IDE
+.vs/
+.vscode/
+*.swp
+.DS_Store
+
+.fake
