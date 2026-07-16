@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Navigate } from 'react-router-dom';
 import { useAuth } from '../auth';
 import { api, setToken } from '../api';
 
@@ -13,7 +14,7 @@ const DEMO_ACCOUNTS = [
 ];
 
 export default function LoginPage() {
-  const { login } = useAuth();
+  const { login, user } = useAuth();
   const [tab, setTab] = useState<Tab>('login');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -66,6 +67,8 @@ export default function LoginPage() {
       setLoading(false);
     }
   };
+
+  if (user) return <Navigate to="/" replace />;
 
   return (
     <div className="auth-page">
