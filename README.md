@@ -115,7 +115,6 @@ LoadFlow/
 ## Hackathon Notes
 
 - Built with AI coding assistance; see [`AI_ASSISTED_DEVELOPMENT.md`](AI_ASSISTED_DEVELOPMENT.md)
-- Recording plan: see [`HACKATHON_DEMO_SCRIPT.md`](HACKATHON_DEMO_SCRIPT.md)
 - SQLite chosen for zero-config local demo
 - POD files stored in `backend/LoadFlow.Api/uploads/pods/`
 - Stretch features included: POD upload/view, compliance expiry alerts, load audit trail, permission-denied log API
